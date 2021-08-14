@@ -171,16 +171,18 @@
                                         <label>Your city *</label>
                                         <select class="vl_empty">
                                             <option class="plh"></option>
-                                            <option value="1">City 1</option>
-                                            <option value="2">City 2</option>
+                                            <?php foreach ($cities as $city):?>
+                                                <option><?=$city->name?></option>
+                                            <?php endforeach; ?>
                                         </select>
                                     </div>
                                     <div class="field">
                                         <label>Your area *</label>
                                         <select>
                                             <option class="plh"></option>
-                                            <option>Area 1</option>
-                                            <option>Area 2</option>
+                                            <?php foreach ($areas as $area):?>
+                                                <option><?=$area->name?></option>
+                                            <?php endforeach; ?>
                                         </select>
                                     </div>
 

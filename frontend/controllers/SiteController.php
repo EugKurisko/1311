@@ -2,6 +2,8 @@
 
 namespace frontend\controllers;
 
+use app\models\Area;
+use app\models\City;
 use frontend\models\ResendVerificationEmailForm;
 use frontend\models\VerifyEmailForm;
 use Yii;
@@ -80,7 +82,13 @@ class SiteController extends Controller
 
     public function actionAddress()
     {
-        return $this->render('address');
+        $cities = City::find()->all();
+        $areas = Area::find()->all();
+//        dd($cities);
+        return $this->render('address', [
+            'cities' => $cities,
+            'areas' => $areas
+        ]);
     }
 
     /**
