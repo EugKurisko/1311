@@ -78,6 +78,11 @@ class SiteController extends Controller
         return $this->render('index');
     }
 
+    public function actionAddress()
+    {
+        return $this->render('address');
+    }
+
     /**
      * Logs in a user.
      *
