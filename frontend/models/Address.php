@@ -12,9 +12,9 @@ use Yii;
  * @property string $name
  * @property int $city_id
  * @property int $area_id
- * @property int|null $user_id
- * @property string|null $street
- * @property string|null $house
+ * @property int $user_id
+ * @property string $street
+ * @property string $house
  * @property string|null $info
  *
  * @property Area $area
@@ -37,7 +37,7 @@ class Address extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['name', 'city_id', 'area_id'], 'required'],
+            [['name', 'city_id', 'area_id', 'user_id', 'street', 'house'], 'required'],
             [['city_id', 'area_id', 'user_id'], 'integer'],
             [['info'], 'string'],
             [['name', 'street', 'house'], 'string', 'max' => 255],

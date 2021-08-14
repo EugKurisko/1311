@@ -169,41 +169,53 @@ use yii\helpers\Html;
 
                                 <?php $form = ActiveForm::begin(['id' => 'address-form']); ?>
                                 <div class="field">
+                                    <div class="vl_empty">
                                     <?= $form->field($model, 'name')
                                         ->textInput(['autofocus' => true, 'class' => "vl_empty"])
                                         ->label('NAME *') ?>
+                                    </div>
                                 </div>
                                 <div class="field">
+                                    <div class="vl_empty">
                                     <?= $form->field($model, 'city_id')
                                         ->dropdownList(ArrayHelper::map($cities, 'id', 'name'),
                                         ['class' => 'plh'])
                                         ->label('YOUR CITY *') ?>
+                                    </div>
                                 </div>
                                 <div class="field">
+                                    <div class="vl_empty">
                                     <?= $form->field($model, 'area_id')
                                         ->dropdownList(ArrayHelper::map($areas, 'id', 'name'),
                                             ['class' => 'plh'])
                                         ->label('YOUR AREA *') ?>
+                                    </div>
                                 </div>
                                 <div class="field">
+                                    <div class="vl_empty">
                                     <?= $form->field($model, 'street')
                                         ->textInput(['autofocus' => true, 'class' => "vl_empty"])
                                         ->label('STREET') ?>
+                                    </div>
                                 </div>
                                 <div class="field">
+                                    <div class="vl_empty">
                                     <?= $form->field($model, 'house')
                                         ->textInput(['autofocus' => true,
                                             'class' => "vl_empty",
                                             'placeholder' => "House Name / Number"
                                         ])
                                         ->label('HOUSE#') ?>
+                                    </div>
                                 </div>
                                 <div class="field">
+                                    <div class="vl_empty">
                                     <?= $form->field($model, 'info')
                                         ->textarea(['autofocus' => true,
                                             'class' => "vl_empty"
                                         ])
                                         ->label('ADDITIONAL INFORMATION') ?>
+                                    </div>
                                 </div>
                                 <div class="field">
                                     <?= Html::submitButton('add address', ['class' => 'green_btn']) ?>
@@ -249,22 +261,28 @@ use yii\helpers\Html;
 
                             <div class="r_col">
                                 <h2>My Addresses</h2>
-
+                                <?php if(empty($userAddresses)) :?>
                                 <div class="uo_adr_list">
                                     <div class="item">
-                                        <h3>HOME Address</h3>
-                                        <p>Dubai, Business Bay Area, Sheikh Zayed Road, Single </p>
-                                        <div class="actbox">
-                                            <a href="#" class="bcross"></a>
-                                        </div>
+                                        <h3>You have no orders</h3>
                                     </div>
+                                </div>
+                                <?php endif; ?>
+                                <?php foreach ($userAddresses as $userAddress):?>
+                                <div class="uo_adr_list">
                                     <div class="item">
-                                        <h3>Work Address</h3>
-                                        <p>Dubai, Business Bay Area, Sheikh Zayed Road, Single<br/>Business Tower, Suite 2204</p>
+                                        <h3><?=$userAddress->name?></h3>
+                                        <p><?=$userAddress->city->name?>,
+                                            <?=$userAddress->area->name?>
+                                            <?=$userAddress->street?>,
+                                            <?=$userAddress->house?>|
+                                            <?=$userAddress->info ?? ''?>
+                                        </p>
                                         <div class="actbox">
                                             <a href="#" class="bcross"></a>
                                         </div>
                                     </div>
+                                <?php endforeach; ?>
                                 </div>
                             </div>
                         </div>

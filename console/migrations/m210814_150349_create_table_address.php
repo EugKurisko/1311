@@ -18,9 +18,9 @@ class m210814_150349_create_table_address extends Migration
                 'name' => $this->string()->notNull(),
                 'city_id' => $this->integer()->notNull(),
                 'area_id' => $this->integer()->notNull(),
-                'user_id' => $this->integer(),
-                'street' => $this->string(),
-                'house' => $this->string(),
+                'user_id' => $this->integer()->notNull(),
+                'street' => $this->string()->notNull(),
+                'house' => $this->string()->notNull(),
                 'info' => $this->text(),
             ], 'ENGINE=InnoDB'
         );

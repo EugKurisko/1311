@@ -83,13 +83,30 @@ class SiteController extends Controller
 
     public function actionAddress()
     {
+        //data to display as selectable options
         $cities = City::find()->all();
         $areas = Area::find()->all();
+
         $model = new Address();
+
+        //get all addresses for current user
+        $userAddresses = Address::find()->andWhere(['user_id' => Yii::$app->user->id])
+            ->orderBy('name')->all();
+
+        $data = Yii::$app->request->post();
+
+        if($model->load(Yii::$app->request->post())) {
+            $model->user_id = Yii::$app->user->id;
+            if ($model->save()) {
+                return $this->refresh();
+            }
+        }
+
         return $this->render('address', [
             'model' => $model,
             'cities' => $cities,
-            'areas' => $areas
+            'areas' => $areas,
+            'userAddresses' => $userAddresses
         ]);
     }
 
