@@ -2,6 +2,7 @@
 
 namespace frontend\controllers;
 
+use app\models\Address;
 use app\models\Area;
 use app\models\City;
 use frontend\models\ResendVerificationEmailForm;
@@ -84,8 +85,9 @@ class SiteController extends Controller
     {
         $cities = City::find()->all();
         $areas = Area::find()->all();
-//        dd($cities);
+        $model = new Address();
         return $this->render('address', [
+            'model' => $model,
             'cities' => $cities,
             'areas' => $areas
         ]);

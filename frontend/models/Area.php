@@ -9,6 +9,8 @@ use Yii;
  *
  * @property int $id
  * @property string|null $name
+ *
+ * @property Address[] $addresses
  */
 class Area extends \yii\db\ActiveRecord
 {
@@ -39,5 +41,15 @@ class Area extends \yii\db\ActiveRecord
             'id' => 'ID',
             'name' => 'Name',
         ];
+    }
+
+    /**
+     * Gets query for [[Addresses]].
+     *
+     * @return \yii\db\ActiveQuery
+     */
+    public function getAddresses()
+    {
+        return $this->hasMany(Address::className(), ['area_id' => 'id']);
     }
 }

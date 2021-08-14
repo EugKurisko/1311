@@ -1,3 +1,8 @@
+<?php
+    use yii\bootstrap4\ActiveForm;
+use yii\helpers\ArrayHelper;
+use yii\helpers\Html;
+?>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -162,48 +167,84 @@
                             <div class="l_col adrs">
                                 <h2>Add New Address</h2>
 
-                                <form action="" method="">
-                                    <div class="field">
-                                        <label>Name *</label>
-                                        <input type="text" value="" palceholder="" class="vl_empty" />
-                                    </div>
-                                    <div class="field">
-                                        <label>Your city *</label>
-                                        <select class="vl_empty">
-                                            <option class="plh"></option>
-                                            <?php foreach ($cities as $city):?>
-                                                <option><?=$city->name?></option>
-                                            <?php endforeach; ?>
-                                        </select>
-                                    </div>
-                                    <div class="field">
-                                        <label>Your area *</label>
-                                        <select>
-                                            <option class="plh"></option>
-                                            <?php foreach ($areas as $area):?>
-                                                <option><?=$area->name?></option>
-                                            <?php endforeach; ?>
-                                        </select>
-                                    </div>
+                                <?php $form = ActiveForm::begin(['id' => 'address-form']); ?>
+                                <div class="field">
+                                    <?= $form->field($model, 'name')
+                                        ->textInput(['autofocus' => true, 'class' => "vl_empty"])
+                                        ->label('NAME *') ?>
+                                </div>
+                                <div class="field">
+                                    <?= $form->field($model, 'city_id')
+                                        ->dropdownList(ArrayHelper::map($cities, 'id', 'name'),
+                                        ['class' => 'plh'])
+                                        ->label('YOUR CITY *') ?>
+                                </div>
+                                <div class="field">
+                                    <?= $form->field($model, 'area_id')
+                                        ->dropdownList(ArrayHelper::map($areas, 'id', 'name'),
+                                            ['class' => 'plh'])
+                                        ->label('YOUR AREA *') ?>
+                                </div>
+                                <div class="field">
+                                    <?= $form->field($model, 'street')
+                                        ->textInput(['autofocus' => true, 'class' => "vl_empty"])
+                                        ->label('STREET') ?>
+                                </div>
+                                <div class="field">
+                                    <?= $form->field($model, 'house')
+                                        ->textInput(['autofocus' => true,
+                                            'class' => "vl_empty",
+                                            'placeholder' => "House Name / Number"
+                                        ])
+                                        ->label('HOUSE#') ?>
+                                </div>
+                                <div class="field">
+                                    <?= $form->field($model, 'info')
+                                        ->textarea(['autofocus' => true,
+                                            'class' => "vl_empty"
+                                        ])
+                                        ->label('ADDITIONAL INFORMATION') ?>
+                                </div>
+                                <div class="field">
+                                    <?= Html::submitButton('add address', ['class' => 'green_btn']) ?>
+                                </div>
 
-                                    <div class="field">
-                                        <label>Street</label>
-                                        <input type="text" value="" palceholder="" class="vl_empty" />
-                                    </div>
-                                    <div class="field">
-                                        <label>House # </label>
-                                        <input type="text" value="" palceholder="House Name / Number" />
-                                    </div>
+                                <?php ActiveForm::end(); ?>
+<!--                                <form action="" method="">-->
+<!--                                    <div class="field">-->
+<!--                                        <label>Name *</label>-->
+<!--                                        <input type="text" value="" palceholder="" class="vl_empty" />-->
+<!--                                    </div>-->
+<!--                                    <div class="field">-->
+<!--                                        <label>Your city *</label>-->
+<!--                                        <select class="vl_empty">-->
+<!--                                            <option class="plh"></option>-->
+<!--                                            --><?php //foreach ($cities as $city):?>
+<!--                                            --><?php //endforeach; ?>
+<!--                                        </select>-->
+<!--                                    </div>-->
+<!--                                    <div class="field">-->
+<!--                                        <label>Your area *</label>-->
+<!--                                        <select>-->
+<!--                                            <option class="plh"></option>-->
+<!--                                        </select>-->
+<!--                                    </div>-->
 
-                                    <div class="field">
-                                        <label class="pos_top">Additional information</label>
-                                        <textarea></textarea>
-                                    </div>
+<!--                                    <div class="field">-->
+<!--                                        <label>Street</label>-->
+<!--                                        <input type="text" value="" palceholder="" class="vl_empty" />-->
+<!--                                    </div>-->
+<!--                                    <div class="field">-->
+<!--                                        <label>House # </label>-->
+<!--                                        <input type="text" value="" palceholder="House Name / Number" />-->
+<!--                                    </div>-->
+<!---->
+<!--                                    <div class="field">-->
+<!--                                        <label class="pos_top">Additional information</label>-->
+<!--                                        <textarea></textarea>-->
+<!--                                    </div>-->
 
-                                    <div class="field">
-                                        <input type="submit" value="add address" class="green_btn" />
-                                    </div>
-                                </form>
+<!--                                </form>-->
                             </div>
 
                             <div class="r_col">
