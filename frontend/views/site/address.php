@@ -22,7 +22,7 @@ use yii\helpers\Html;
                 <div class="wrapper">
 
                     <div class="logo_box">
-                        <a href="index.html"><img src="img/logo.png" alt="foodclub"/></a>
+                        <a href="index.html"><img src="<?= Yii::$app->request->baseUrl ?>/img/logo.png" alt="foodclub"/></a>
                     </div>
 
                     <div class="lng_box">
@@ -77,7 +77,7 @@ use yii\helpers\Html;
                             </div>
                             <div class="navbox">
                                 <a href="#" class="midbox nftoggle">
-                                    <img src="imgc/user_ava_1_40.jpg" alt=""/>
+                                    <img src="<?= Yii::$app->request->baseUrl ?>/imgc/user_ava_1_40.jpg" alt=""/>
                                     <span class="warrd"></span>
                                 </a>
                                 <nav class="utnav">
@@ -131,7 +131,7 @@ use yii\helpers\Html;
                 <div class="uo_header">
                     <div class="wrapper cf">
                         <div class="wbox ava">
-                            <figure><img src="imgc/user_ava_1_140.jpg" alt="Helena Afrassiabi" /></figure>
+                            <figure><img src="<?= Yii::$app->request->baseUrl ?>/imgc/user_ava_1_140.jpg" alt="Helena Afrassiabi" /></figure>
                         </div>
                         <div class="main_info">
                             <h1>Helena Afrassiabi</h1>
