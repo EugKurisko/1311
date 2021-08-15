@@ -94,10 +94,16 @@ class SiteController extends Controller
             ->orderBy('name')->all();
 
         $data = Yii::$app->request->post();
+//dd(Yii::$app->user->id);
 
         if($model->load($data)) {
+            if(!Yii::$app->user->id) {
+                Yii::$app->session->setFlash('error', 'Please register');
+                return $this->refresh();
+            }
             $model->user_id = Yii::$app->user->id;
             if ($model->save()) {
+                Yii::$app->session->setFlash('success', 'Your address successfully added');
                 return $this->refresh();
             }
         }
