@@ -3,18 +3,18 @@
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 ?>
-<!DOCTYPE HTML>
-<html>
-<head>
-    <meta charset="UTF-8">
+<!--<!DOCTYPE HTML>-->
+<!--<html>-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!---->
+<!--    <title>address ::: user office ::: foodclub</title>-->
+<!--    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,700italic,400italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>-->
+<!--    <link href="css/default.css" rel="stylesheet" type="text/css" />-->
+<!---->
+<!--</head>-->
 
-    <title>address ::: user office ::: foodclub</title>
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,700italic,400italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-    <link href="css/default.css" rel="stylesheet" type="text/css" />
-
-</head>
-
-<body>
+<!--<body>-->
 <div class="cbc">
     <div class="main">
         <header>
@@ -143,7 +143,7 @@ use yii\helpers\Html;
                                     <a href="#">Win iPad</a>
                                 </div>
                             </div>
-                            <div class="stat">
+                            <div class="stat" style="margin: -60px auto">
                                 <div class="item">
                                     <div class="num">30</div>
                                     <div class="title">total orders</div>
@@ -220,43 +220,7 @@ use yii\helpers\Html;
                                 <div class="field">
                                     <?= Html::submitButton('add address', ['class' => 'green_btn']) ?>
                                 </div>
-
                                 <?php ActiveForm::end(); ?>
-<!--                                <form action="" method="">-->
-<!--                                    <div class="field">-->
-<!--                                        <label>Name *</label>-->
-<!--                                        <input type="text" value="" palceholder="" class="vl_empty" />-->
-<!--                                    </div>-->
-<!--                                    <div class="field">-->
-<!--                                        <label>Your city *</label>-->
-<!--                                        <select class="vl_empty">-->
-<!--                                            <option class="plh"></option>-->
-<!--                                            --><?php //foreach ($cities as $city):?>
-<!--                                            --><?php //endforeach; ?>
-<!--                                        </select>-->
-<!--                                    </div>-->
-<!--                                    <div class="field">-->
-<!--                                        <label>Your area *</label>-->
-<!--                                        <select>-->
-<!--                                            <option class="plh"></option>-->
-<!--                                        </select>-->
-<!--                                    </div>-->
-
-<!--                                    <div class="field">-->
-<!--                                        <label>Street</label>-->
-<!--                                        <input type="text" value="" palceholder="" class="vl_empty" />-->
-<!--                                    </div>-->
-<!--                                    <div class="field">-->
-<!--                                        <label>House # </label>-->
-<!--                                        <input type="text" value="" palceholder="House Name / Number" />-->
-<!--                                    </div>-->
-<!---->
-<!--                                    <div class="field">-->
-<!--                                        <label class="pos_top">Additional information</label>-->
-<!--                                        <textarea></textarea>-->
-<!--                                    </div>-->
-
-<!--                                </form>-->
                             </div>
 
                             <div class="r_col">
@@ -356,6 +320,6 @@ use yii\helpers\Html;
         </div>
     </footer>
 </div>
-</body>
+<!--</body>-->
 
-</html>
+<!--</html>-->

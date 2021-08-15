@@ -95,7 +95,7 @@ class SiteController extends Controller
 
         $data = Yii::$app->request->post();
 
-        if($model->load(Yii::$app->request->post())) {
+        if($model->load($data)) {
             $model->user_id = Yii::$app->user->id;
             if ($model->save()) {
                 return $this->refresh();
