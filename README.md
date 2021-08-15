@@ -1,3 +1,12 @@
+1. git clone https://github.com/EugKurisko/1311.git
+2. configure db settings in common/config/main-local.php
+3. run command yii migrate
+4. open project in browser
+5. click on Signup (navigation bar)
+6. Input data in all fields (Create user)
+7. click on Login and write your login and password
+8. click on Address and write your address
+
 <p align="center">
     <a href="https://github.com/yiisoft" target="_blank">
         <img src="https://avatars0.githubusercontent.com/u/993323" height="100px">
